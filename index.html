@@ -1,0 +1,75 @@
+\<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동그라미 초등학생들에게</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start; /* 상단 정렬 */
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px; /* 상단 여백 */
+        }
+        #content { 
+            display: none;
+            width: 80%;
+            text-align: left; /* 좌측 정렬 */
+            line-height: 1.6;
+        }
+        .indented-paragraph {
+            text-indent: 2em; /* 들여쓰기 간격 설정 */
+            margin-bottom: 1em;
+        }
+        #password-container {
+            text-align: center; /* 비밀번호 입력란 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <div id="title-container">
+        <h1>암호를 풀고 비밀번호를 입력하세요</h1>
+    </div>
+    <div id="password-container">
+        <input type="text" id="password" placeholder="비밀번호 입력"> <!-- 입력 내용 표시 -->
+        <button onclick="checkPassword()">확인</button>
+    </div>
+
+    <div id="content">
+        <h2>동그라미 친구들에게</h2>
+        <p class="indented-paragraph">지난 10개월 동안 코딩 배우느라 고생 많았어.</p>
+        <p class="indented-paragraph">처음 너희에게 코딩을 가르치게 되었을 땐 고민이 많았어.</p>
+        <p class="indented-paragraph">중, 고등학생 코딩도 아니고 어떻게 초등학생을 가르칠까 내가 잘 할 수 있을까.</p>
+        <p class="indented-paragraph">이런 걱정이 앞섰지. 수업 준비를 하면서도 이건 너무 어려운지, 시시한지 고민하느라.</p>
+        <p class="indented-paragraph">수업 준비만 하루 이상 걸린 날도 많고...</p>
+        <p class="indented-paragraph">그렇게 준비해서, 너희들이 잘 따라와 주면 그날은 나에겐 기쁜 하루가 되었어.</p>
+        <p class="indented-paragraph">그렇게 함께한 시간이 벌써 마지막 수업이라니, 시간이 정말 빠르게 흘러간 것 같네.</p>
+        <p class="indented-paragraph">이제 좀 감이 잡혔는데 벌써 시간이 다 된 것이 너무 아쉽다.</p>
+        <p class="indented-paragraph">사실... 너희에게 가끔씩 풀게 한 퀴즈 문제들 정보올림피아드 초등부 기출 문제였어.</p>
+        <p class="indented-paragraph">어려운 게 당연했지. 그럼에도 나는 너희가 풀 수 있을 것이라 믿었어.</p>
+        <p class="indented-paragraph">내가 너희를 믿은 만큼, 너희 자신을 믿고 항상 배운 것을 바탕으로 더 도전하고, 창의적으로 생각하고,</p>
+        <p class="indented-paragraph">서로 도우며 성장해 나가길 응원할게.</p>
+        <p class="indented-paragraph">제발 서로 싸우지 말고 사이좋게 지내고!!!</p>
+        <p class="indented-paragraph">- 영교쌤이 -</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "ABFJ"; // 원하는 비밀번호 설정
+
+            if (password === correctPassword) {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("title-container").style.display = "none"; // 제목 숨김
+                document.getElementById("password-container").style.display = "none"; // 비밀번호 입력 영역 숨김
+            } else {
+                alert("비밀번호가 틀렸습니다.");
+            }
+        }
+    </script>
+</body>
+</html>
