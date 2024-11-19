@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동그라미 아이들에게</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start; /* 상단 정렬 */
+            height: 100vh;
+            margin: 0;
+            padding-top: 20px; /* 상단 여백 */
+        }
+        #content { 
+            display: none;
+            width: 80%;
+            text-align: left; /* 좌측 정렬 */
+            line-height: 1.6;
+        }
+        .indented-paragraph {
+            text-indent: 2em; /* 들여쓰기 간격 설정 */
+            margin-bottom: 1em;
+        }
+        #password-container {
+            text-align: center; /* 비밀번호 입력란 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <div id="title-container">
+        <h1>암호를 풀고 비밀번호를 입력하세요</h1>
+    </div>
+    <div id="password-container">
+        <input type="text" id="password" placeholder="비밀번호 입력"> <!-- 입력 내용 표시 -->
+        <button onclick="checkPassword()">확인</button>
+    </div>
+
+    <div id="content">
+        <h2>동그라미 친구들에게</h2>
+        <p class="indented-paragraph">애들아 지금까지 코딩 배우느라 고생이 많았다.</p>
+        <p class="indented-paragraph">이제 다음 수업부터 수학공부를 하자꾸나!  .</p>
+       
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "ACFIHJ"; // 원하는 비밀번호 설정
+
+            if (password === correctPassword) {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("title-container").style.display = "none"; // 제목 숨김
+                document.getElementById("password-container").style.display = "none"; // 비밀번호 입력 영역 숨김
+            } else {
+                alert("비밀번호가 틀렸습니다.");
+            }
+        }
+    </script>
+</body>
+</html>
